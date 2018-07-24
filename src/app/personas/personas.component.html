@@ -1,29 +1,10 @@
 <p>
   {{titulo}}
 </p>
-<div *ngIf="persona">
-  {{persona.name | uppercase }} {{persona.lastname}} tiene {{persona.age}} años
-  
-  <div>
-    <label>name:
-      <input [(ngModel)]="persona.name" placeholder="name">
-    </label>
-  </div>
-  <div>
-    <label>lastname:
-      <input [(ngModel)]="persona.lastname" placeholder="name">
-    </label>
-  </div>
-  <div>
-    <label>age:
-      <input [(ngModel)]="persona.age" type="number" placeholder="name">
-    </label>
-  </div>
-  <button (click)="cancel()">Cancela</button>
-</div>
-
 <ul>
-  <li *ngFor="let per of personas" (click)="onSelectPerson(per)">
-    {{per.name}} {{per.lastname}} - edad {{per.age}}
+  <li 
+    *ngFor="let per of personas" 
+    [class.selected]="per === persona">
+    <a routerLink="/detalle/{{per.id}}">{{per.name}} {{per.lastname}} - edad {{per.age}}</a>
   </li>
 </ul>

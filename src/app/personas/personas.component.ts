@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PersonaService } from '../persona.service';
 import { Persona } from '../persona'
 import { personasList } from '../mock-personas'
 
@@ -9,28 +9,20 @@ import { personasList } from '../mock-personas'
   styleUrls: ['./personas.component.css']
 })
 export class PersonasComponent implements OnInit {
-  // personas: string[] = [
-  //   'Hugo',
-  //   'Paco',
-  //   'Luis',
-  //   'Donnald'
-  // ]
-  // persona: Persona = {
-  //   name: 'Ralex',
-  //   lastname: 'Rdz',
-  //   age: 29
-  // }
   persona: Persona
-  personas = personasList
+  personas: Persona[]
   titulo:string = '--Personas--'
-  constructor() { }
+  constructor(private personaService: PersonaService) { 
 
-  ngOnInit() {
-    console.log('hola')
   }
 
-  onSelectPerson( persona: Persona) {
-    this.persona = persona
+  ngOnInit() {
+    this.getPersonas()
+  }
+
+  getPersonas(): void {
+    this.personaService.getPersonas()
+      .subscribe(personas => this.personas = personas)
   }
 
   cancel() {

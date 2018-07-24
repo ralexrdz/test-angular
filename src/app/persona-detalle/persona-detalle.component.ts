@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Persona } from '../persona'
+
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { PersonaService } from '../persona.service'
 
 @Component({
   selector: 'app-persona-detalle',
@@ -6,10 +12,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./persona-detalle.component.css']
 })
 export class PersonaDetalleComponent implements OnInit {
+  @Input() persona: Persona
+  constructor(
+    private route: ActivatedRoute,
+    private personaService: PersonaService,
+    private location: Location
+  ) { }
 
-  constructor() { }
+  ngOnInit(): void {
+    this.getPersona()
+  }
 
-  ngOnInit() {
+  getPersona(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.personaService.getPersona(id)
+      .subscribe(persona => this.persona = persona);
+  }
+
+  goBack(): void {
+    this.location.back()
   }
 
 }
