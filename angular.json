@@ -23,9 +23,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/fullcalendar/dist/fullcalendar.css",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/moment/moment.js",
+              "./node_modules/fullcalendar/dist/fullcalendar.js",
+              "./node_modules/leaflet/dist/leaflet.js"
+            ]
           },
           "configurations": {
             "production": {

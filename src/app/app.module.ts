@@ -7,6 +7,9 @@ import { PersonasComponent } from './personas/personas.component';
 import { PersonaDetalleComponent } from './persona-detalle/persona-detalle.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { MapaComponent } from './mapa/mapa.component';
+import { CompArgsComponent } from './comp-args/comp-args.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PersonasComponent,
     PersonaDetalleComponent,
     DashboardComponent,
+    CalendarComponent,
+    MapaComponent,
+    CompArgsComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { PersonasComponent } from './personas/personas.component'
 import { DashboardComponent }   from './dashboard/dashboard.component'
 import { PersonaDetalleComponent }   from './persona-detalle/persona-detalle.component'
+import { CalendarComponent }   from './calendar/calendar.component'
+import { MapaComponent }   from './mapa/mapa.component'
 
 const routes: Routes = [
   {
     path: 'personas',
     component: PersonasComponent
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent
+  },
+  {
+    path: 'mapa',
+    component: MapaComponent
   },
   {
     path: 'dashboard',
