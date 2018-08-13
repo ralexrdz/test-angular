@@ -8,7 +8,11 @@ import * as L from 'leaflet'
   styleUrls: ['./mapa.component.css']
 })
 export class MapaComponent implements OnInit {
-
+  miArreglo: {titulo: string}[] = [
+    {
+      titulo: "asdasd"
+    }
+  ] 
   constructor() { }
 
   ngOnInit() {

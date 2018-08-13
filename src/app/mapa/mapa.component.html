@@ -5,4 +5,8 @@
 <app-comp-args imgRoute="https://picsum.photos/420/320?image=1" hola="Aloha"></app-comp-args>
 <app-comp-args imgRoute="https://picsum.photos/420/320?image=2" hola="Quibolas"></app-comp-args>
 <app-comp-args imgRoute="https://picsum.photos/420/320?image=3" hola="Qué hongo"></app-comp-args> -->
-<app-comp-args imgRoute="https://picsum.photos/420/320?image=2" hola="Quibolas"></app-comp-args>
+<app-comp-args
+    *ngFor=""
+    imgRoute="{{sub.title}}" 
+    hola="Quibolas">
+</app-comp-args>
